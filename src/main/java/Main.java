@@ -58,6 +58,10 @@ public class Main {
     }
 
     private static BigInteger selectP() throws NoSuchAlgorithmException {
+        return genNumber();
+    }
+
+    private static BigInteger genNumber() throws NoSuchAlgorithmException {
 
         while (true) {
             BigInteger candidate = BigInteger.probablePrime(1024, SecureRandom.getInstance("SHA1PRNG"));
@@ -70,12 +74,11 @@ public class Main {
     }
 
     private static BigInteger selectS() throws NoSuchAlgorithmException {
-        return BigInteger.probablePrime(1024, SecureRandom.getInstance("SHA1PRNG"));
+        return genNumber();
     }
 
     private static BigInteger selectG() {
         return FIVE;
-//        return BigInteger.probablePrime(1024, SecureRandom.getInstance("SHA1PRNG"));
     }
 
     /**
